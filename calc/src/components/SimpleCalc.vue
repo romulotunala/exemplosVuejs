@@ -7,12 +7,14 @@
 					type="number"
 					min="0" max="9999999999"
 					v-model.number="value1"
-					v-validate:value1="{required: true, maxlength: 10}">
+					v-validate:value1="{required: true, maxlength: 10}"
+					@click="result=''">
 				<input class="sectionInputs-value secondValue" 
 					type="number"
 					min="0" max="9999999999"
 					maxlength="10"
-					v-model.number="value2">
+					v-model.number="value2"
+					@click="result=''">
 				<p class="sectionInputs-result">{{ result }}</p>
 			</section>
 			<section class="mainContainer-section section-keyboard">
@@ -58,15 +60,23 @@ export default{
 		calc(value){
 			if(value === 'soma'){
 				this.result = this.value1 + this.value2
+				this.value1 = 0
+				this.value2 = 0
 			}else if(value === 'subtracao'){
 				this.result = this.value1 - this.value2
+				this.value1 = 0
+				this.value2 = 0
 			}else if(value === 'multiplicacao'){
 				this.result = this.value1 * this.value2
+				this.value1 = 0
+				this.value2 = 0
 			}else{
 				if(this.value2 === 0 || this.value2 === ''){
 					alert("Preencha todos os valores!")
 				}else{
 					this.result = this.value1 / this.value2
+					this.value1 = 0
+					this.value2 = 0
 				}
 			}
 		}
@@ -74,7 +84,7 @@ export default{
 }
 </script>
 <style>
-/* link do layout https://dribbble.com/shots/2809534-Daily-UI-Calculator*/
+/* link do layout https://dribbble.com/shots/2863670-Calculator-DailyUI-004*/
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 #appCalc{
@@ -167,6 +177,7 @@ export default{
 }
 .section-keyboard{
 	height: 70%;
+	background-color: #2DB0A8;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -177,7 +188,6 @@ export default{
 	width: 50%;
 	height: 50%;
 	background-color: #2DB0A8;
-	/*border:1px #40355f outset;*/
 	border:none;
 	font-family: 'Montserrat', sans-serif;
 	font-weight:400;

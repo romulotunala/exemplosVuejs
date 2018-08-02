@@ -1,4 +1,4 @@
-	<template>
+<template>
 <div id="appVnw">
 	<header class="menuBar">
 		<img class="menuBar-logo" src="../assets/logo_VnW.svg">
@@ -135,9 +135,9 @@ export default{
 			this.age = ''
 		}
 	},
-	components:{
-		Alunos
-	}
+	// components:{
+	// 	Alunos
+	// }
 }
 </script>
 <style scoped>

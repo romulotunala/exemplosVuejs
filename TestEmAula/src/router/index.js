@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import TelaLogin from '@/components/TelaLogin'
 import ListaAlunos from '@/components/ListaAlunos'
 import Caio from '@/components/Caio'
+import UseAPI from '@/components/UseAPI'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path:'/exemplocaio',
       name:'Caio',
       component:Caio
+    },
+    {
+      path:'/api',
+      name:'UseAPI',
+      component:UseAPI
     }
   ]
 })
